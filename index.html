@@ -10,9 +10,34 @@
 </head>
 <body>
     <div id="app">
+        <P>{{ greeting }}</P>
+        <P> ti einai telika :{{ isItTrue ? 'yes' : 'no' }}</P>
+        <P>{{ array[1] }}</P>
+        <P>{{ obj.car }}</P>
+        <P>{{ func() }}</P>
     </div>
 </body>
+<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
 <script>
 
+    const date = new Date().toLocaleString()
+
+    const App = {
+        data(){
+            return{
+                greeting:'HI RE' + date ,
+                isItTrue: true,
+                array : ['George', 'Nikos'],
+                obj : {
+                    car:'lada'
+                },
+                func:()=>{
+                    return 'Message from function'
+                }
+            }
+        }
+    }
+
+    Vue.createApp(App).mount('#app')
 </script>
 </html>
