@@ -18,30 +18,30 @@
     const App = {
         data(){
             return {
-                gretting:'Hello guys today is ' + date,
-                isItTrue: false,
-                array:['Francis','Jane','Steve'],
-                obj:{
-                    car:'Ferrari'
+                gretting: 'Hello guys today is ' + date, // A greeting with the current date
+                isItTrue: true, // A boolean flag
+                array: ['Francis', 'Jane', 'Steve'], // An array of names
+                obj: {
+                    car: 'Ferrari' // An object property with a car name
                 },
-                func:()=>{
-                    return 'Message from function'
+                func: () => {
+                    return 'Message from function' // A function that returns a message
                 }
             }
         },
         methods:{
             welcome(){
-                const randomName = this.array[Math.floor(Math.random() * this.array.length)]
-                if(this.isItTrue){
-                    return `${this.gretting}, my name is ${randomName}`
+                const randomName = this.array[Math.floor(Math.random() * this.array.length)] // Randomly selects a name from the array
+
+                if (this.isItTrue) { // If the boolean flag is true
+                    return `${this.gretting}, my name is ${randomName}` // Return the greeting with a random name
                 }
 
-                return this.obj.car
+                return this.obj.car // Otherwise, return the car name from the object
             }
         }
     }
 
     Vue.createApp(App).mount('#app')
-
 </script>
 </html>
